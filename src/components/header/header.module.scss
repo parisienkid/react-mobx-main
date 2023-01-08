@@ -1,0 +1,33 @@
+.header {
+    padding: 30px 0;
+}
+
+.logo {
+    font-size: 16px;
+}
+
+
+.content {
+    display: flex;
+    justify-content: center;
+}
+
+
+.nav {
+    // margin-left: auto;
+    display: flex;
+    a {
+        font-size: 16px;
+        margin-right: 30px;
+        color: var(--color-primary);
+        text-decoration: none;
+        opacity: .7;
+        transition: .1s;
+        &:hover {
+            opacity: 1;
+        }
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}

@@ -1,0 +1,42 @@
+.wrap {
+    height: 100vh;
+    width: 100%;
+    background-color: var(--color-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    svg {
+        position: absolute;
+        top: 0%;
+        left: 0%;
+        width: 100vw;
+        height: 105vh;
+        display: block;
+        // fill: #171717;
+
+    }
+    svg#svg {
+        fill: #161618;
+        z-index: 5;
+    }
+    svg#svgBg {
+        fill: #e0e0e0;
+        z-index: 4;
+        // transform: rotate(180deg);
+    }
+}
+
+.loading {
+    text-align: center;
+    max-width: 66.6vw;
+    width: 900px;
+    font-size: 95px;
+    font-weight: 500;
+    z-index: 20;
+    color: #e0e0e0;
+    position: absolute;
+    left: 50%;
+    top: 55%;
+    transform: translateX(-50%) translateY(-50%);
+}

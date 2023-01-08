@@ -1,0 +1,11 @@
+a {
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    color: var(--color-secondary);
+    svg {
+        display: block;
+        height: 1.4rem;
+        margin-left: 10px;
+    }
+}
