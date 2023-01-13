@@ -1,5 +1,7 @@
 .header {
     padding: 30px 0;
+    z-index: 15;
+    position: relative;
 }
 
 .logo {
@@ -12,11 +14,43 @@
     justify-content: center;
 }
 
+.logo {
+    position: relative;
+    height: 30px;
+    width: 60px;
+    transform-origin: center;
+}
+
+.primary {
+    height: 30px;
+    width: 30px;
+    border: 2px solid var(--color-secondary);
+    border-radius: 50%;
+    position: absolute;
+    left: 15px;
+    top: 0;
+    // background: var(--color-secondary);
+}
+
+.secondary {
+    height: 30px;
+    width: 30px;
+    border: 2px solid var(--color-secondary);
+    border-radius: 50%;
+    position: absolute;
+    left: 15px;
+    top: 0;
+    opacity: 0;
+    // background: var(--color-secondary);
+}
+
 
 .nav {
-    // margin-left: auto;
+    margin-left: auto;
     display: flex;
+    align-items: center;
     a {
+        display: inline-block;
         font-size: 16px;
         margin-right: 30px;
         color: var(--color-primary);

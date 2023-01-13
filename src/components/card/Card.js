@@ -1,7 +1,13 @@
+import { useLayoutEffect, useRef } from 'react';
+
+import gsap from 'gsap';
+
 import styles from './card.module.scss';
 
 
-function Card({url, title, paragraph, children}) {
+function Card({url, title, paragraph, children, a}) {
+
+
     return (
         <article className={styles.card}>
             <div className={styles.icon_bg}>
@@ -11,9 +17,15 @@ function Card({url, title, paragraph, children}) {
             <div className={styles.title}>
                 {title}
             </div>
-            <p>
-                {paragraph}
-            </p>
+            {
+                a
+                ?
+                <a target='_blank' href={paragraph}>{paragraph}</a>
+                :
+                <h3>
+                    {paragraph}
+                </h3>
+            }
         </article>
     );
 }

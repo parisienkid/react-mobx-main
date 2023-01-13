@@ -2,6 +2,7 @@ import { makeAutoObservable } from "mobx";
 
 class LoaderStatus {
     status = 'loading';
+
     constructor() {
         makeAutoObservable(this)
     }

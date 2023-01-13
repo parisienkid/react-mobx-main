@@ -6,6 +6,8 @@
     align-items: center;
     justify-content: center;
     position: relative;
+    z-index: 50;
+    overflow: hidden;
     svg {
         position: absolute;
         top: 0%;

@@ -6,7 +6,7 @@ function Cards({url, p, children}) {
     return (
         <section className={styles.wrapper}>
             <div className={styles.header}>
-                <p>{p}</p>
+                <h3>{p}</h3>
                 {
                     url 
                     ?

@@ -1,0 +1,49 @@
+.stack {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    position: relative;
+    margin: 100px 0 100px 0;
+    padding-left: 15px;
+    li {
+        margin-top: 10px;
+        font-size: 1.3rem;
+        // line-height: 1.7rem;
+        &:nth-child(1) {
+            margin-top: 0;
+        }
+    }
+    &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: block;
+        height: 100%;
+        width: 1px;
+        background-color: var(--color-primary);
+    }
+}
+
+.work_block {
+    margin-top: 80px;
+}
+
+
+
+.stroke_block {
+    display: flex;
+    padding: 40px 0;
+    span {
+        color: var(--color-primary);
+        display: block;
+        font-size: 1.1rem;
+        &:nth-child(2) {
+            margin-left: auto;
+            margin-right: 50px;
+        }
+    }
+}
+
+
+
