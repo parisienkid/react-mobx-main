@@ -12,33 +12,34 @@ import AppRoutes from '../../core/routes/Routes';
 import Loader from '../loader/Loader';
 import Header from '../header/Header';
 import Footer from '../footer/Footer';
+import Cursor from '../cursor/Cursor';
 
 
 gsap.config({
   nullTargetWarn: false,
 })
 
-// const renderLoader = () => {
-//   if (loaderStatus.status === 'loading') {
-//     return <Loader/>
-//   } else {
-//     return (
-      
-//     )
-//   }
-// }
+const renderLoader = () => {
+  if (loaderStatus.status === 'loading') {
+    return <Loader/>
+  } else {
+    return (
+      <div className={styles.app}>
+        <div id='overlay'></div>
+        <Cursor/>
+        <Header/>
+        <AppRoutes/>
+        <Footer/>
+      </div>
+    )
+  }
+}
 
 
 const App = observer(() => {
   return (
    <Router>
-      {/* {renderLoader()} */}
-      <div className={styles.app}>
-        <div id='overlay'></div>
-        <Header/>        
-        <AppRoutes/>
-        <Footer/>
-      </div>
+    {renderLoader()}
    </Router>
   );
 }) 

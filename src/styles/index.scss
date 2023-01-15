@@ -18,12 +18,28 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Inter', sans-serif;
+    cursor: none !important;
+    &:focus {
+        cursor: none !important;
+    }
+    &:hover {
+        cursor: none !important;
+    }
 }
 
 body, html {
     height: 100%;
     width: 100%;
     font-size: 14px;
+    @media (max-width: 1000px) {
+        font-size: 13px;
+    }
+    @media (max-width: 800px) {
+        font-size: 12px;
+    }
+    @media (max-width: 600px) {
+        font-size: 11px;
+    }
 }
 
 body {
@@ -38,6 +54,7 @@ a {
     font-size: 1.1rem;
     &:hover {
         color: var(--color-primary); 
+        cursor: none;
     }
 }
 

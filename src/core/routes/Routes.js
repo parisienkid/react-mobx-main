@@ -1,18 +1,14 @@
-import { useLayoutEffect } from 'react';
-import { ScrollRestoration } from "react-router-dom";
-
 import {
     Routes,
     Route,
-    useLocation
 } from "react-router-dom";
-
 
 import TransitionComponent from "../../components/transition-component/TransitionComponent";
 
 import MainPage from "../../pages/main-page/MainPage";
 import WorkPage from '../../pages/work-page/WorkPage';
 import ContactPage from '../../pages/contact-page/ContactPage';
+import Page404 from "../../pages/404-page/404Page";
 
 
 function AppRoutes() {
@@ -22,29 +18,35 @@ function AppRoutes() {
             <Route 
                 path='/' 
                 element={
-                    // <ScrollWrapper>
-                        <TransitionComponent>
-                            <MainPage/>
-                        </TransitionComponent>
-                    // </ScrollWrapper>
+                    <TransitionComponent>
+                        <MainPage/>
+                    </TransitionComponent>
                 }
             />
-            <Route path='/work' 
+            <Route 
+                path='/work' 
                 element={
-                    // <ScrollWrapper>
-                        <TransitionComponent>
-                            <WorkPage/>
-                        </TransitionComponent>
-                    // </ScrollWrapper>
-                }></Route>
-            <Route path='/contact' 
+                    <TransitionComponent>
+                        <WorkPage/>
+                    </TransitionComponent>
+                }
+            />
+            <Route 
+                path='/contact' 
                 element={
-                    // <ScrollWrapper>
-                        <TransitionComponent>
-                            <ContactPage/>
-                        </TransitionComponent>
-                    // </ScrollWrapper>
-                }></Route>
+                    <TransitionComponent>
+                        <ContactPage/>
+                    </TransitionComponent>
+                }
+            />
+            <Route
+                path='*' 
+                element={
+                    <TransitionComponent>
+                        <Page404/>
+                    </TransitionComponent>
+                }
+            />
         </Routes>
     );
 }
