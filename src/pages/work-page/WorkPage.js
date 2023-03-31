@@ -71,9 +71,15 @@ function WorkPage() {
                     <div className={styles.work_block}>
                         <h3>Story</h3>
                         <div className={styles.stroke_block}>
-                            <span>Front-end developer</span>
-                            <span>Freelance</span>
+                            <span>Web-developer</span>
+                            <span>Freelance.</span>
                             <span>2020 - Current</span>
+                        </div>
+                        <div className="line"></div>
+                        <div className={styles.stroke_block}>
+                            <span>Front-end developer</span>
+                            <span>BreadHead studio.</span>
+                            <span>2023 - Current</span>
                         </div>
                         <div className="line"></div>
                     </div>

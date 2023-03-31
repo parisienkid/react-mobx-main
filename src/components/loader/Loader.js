@@ -53,35 +53,19 @@ export default function Loader() {
         y: -80,
         duration: 1,
         ease: 'linear',
-
-        // top: -150,
-        // opacity: 0,
-        // ease: 'power2.out',
-        // onStart: closeImages,
       })
       .to(loadingRef.current, {
         y: -100,
         duration: 0.5,
         ease: 'linear',
-
-        // top: -150,
         opacity: 0,
-        // ease: 'power2.out',
-        // onStart: closeImages,
       })
-      // .to(svg.current, {
-      //   delay: 1.5,
-      //   duration: .8,
-      //   attr: { d: curve },
-      //   ease: "power2.easeIn",
-      // }, '-=1.3')
       .to(svg.current, {
         duration: .8,
         attr: { d: flat },
         ease: "power2.easeOut",
       })
       .to(svgBg.current, {
-        // delay: 1.5,
         duration: .8,
         attr: { d: curve },
         ease: "power2.easeIn",
@@ -92,13 +76,28 @@ export default function Loader() {
         ease: "power2.easeOut",
         onComplete: changeLoaderStatus
       }, '-=0.5')
-      // .to(svg.current, {
-      //   opacity: 0,
-      //   duration: 0
-      // })
     }, wrap)
     return () => ctx.revert();
   },[]);
+
+  const renderImages = () => {
+    if (document.documentElement.clientWidth > 1000) {
+      return (
+        <>
+          <LoaderImage left='20vw' top='45vh' imagesReady={imagesReady} url={'https://sun9-79.userapi.com/impg/3XxW1dpijzEdSFsDVAi8g1c6_3zsY-xJ_08Hvw/ngjS91CMqMQ.jpg?size=1440x2160&quality=96&sign=c6f9d8d0e494d52f95beae13d11af8a4&type=album'}/>
+          <LoaderImage left='80vw' top='60vh' imagesReady={imagesReady} url={'https://sun9-51.userapi.com/impg/LjvyKpOC_WGXREOuACIs5O4I-Kg3p4CKe85nfw/HVLL0e-CU30.jpg?size=1160x1544&quality=95&sign=6a77e2c2d05010e97f9f532b1891264a&type=album'} />
+          <LoaderImage left='50vw' top='75vh' imagesReady={imagesReady} url={'https://sun9-19.userapi.com/impg/0zsA9q8IQWR3SdFqjlOq_MOLWeWXH1eBa8v4Xg/IeZoNZ9oQ-Q.jpg?size=956x1276&quality=96&sign=fd3b16ef2ab4a7783ada26365270d9b7&type=album'}/>
+        </>
+      )
+    } else {
+      return (
+        <>
+          <LoaderImage left='25vw' top='60vh' imagesReady={imagesReady} url={'https://sun9-51.userapi.com/impg/LjvyKpOC_WGXREOuACIs5O4I-Kg3p4CKe85nfw/HVLL0e-CU30.jpg?size=1160x1544&quality=95&sign=6a77e2c2d05010e97f9f532b1891264a&type=album'} />
+          <LoaderImage left='75vw' top='75vh' imagesReady={imagesReady} url={'https://sun9-19.userapi.com/impg/0zsA9q8IQWR3SdFqjlOq_MOLWeWXH1eBa8v4Xg/IeZoNZ9oQ-Q.jpg?size=956x1276&quality=96&sign=fd3b16ef2ab4a7783ada26365270d9b7&type=album'}/>
+        </>
+      )
+    }
+  }
 
   return (
       <div ref={wrap} className={styles.wrap}>
@@ -108,10 +107,7 @@ export default function Loader() {
         <svg id={styles.svgBg} viewBox="0 0 1000 1000" preserveAspectRatio="none">
           <path ref={svgBg} d="M0,1005S175,995,500,995s500,5,500,5V0H0Z"></path>
         </svg>
-        <LoaderImage left='20vw' top='45vh' imagesReady={imagesReady} url={'https://sun9-79.userapi.com/impg/3XxW1dpijzEdSFsDVAi8g1c6_3zsY-xJ_08Hvw/ngjS91CMqMQ.jpg?size=1440x2160&quality=96&sign=c6f9d8d0e494d52f95beae13d11af8a4&type=album'}/>
-        <LoaderImage left='80vw' top='60vh' imagesReady={imagesReady} url={'https://sun9-51.userapi.com/impg/LjvyKpOC_WGXREOuACIs5O4I-Kg3p4CKe85nfw/HVLL0e-CU30.jpg?size=1160x1544&quality=95&sign=6a77e2c2d05010e97f9f532b1891264a&type=album'} />
-        <LoaderImage left='50vw' top='75vh' imagesReady={imagesReady} url={'https://sun9-19.userapi.com/impg/0zsA9q8IQWR3SdFqjlOq_MOLWeWXH1eBa8v4Xg/IeZoNZ9oQ-Q.jpg?size=956x1276&quality=96&sign=fd3b16ef2ab4a7783ada26365270d9b7&type=album'}/>
-      
+        {renderImages()}
         <div className={styles.loading} ref={loadingRef}>I'm Danya. Welcome to my personal web/page.</div>
       </div>
   )

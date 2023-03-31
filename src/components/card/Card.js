@@ -1,9 +1,7 @@
-import { useLayoutEffect, useRef } from 'react';
 
-import gsap from 'gsap';
 
 import styles from './card.module.scss';
-
+import { cursorHoverOff, cursorHoverOn } from '../../core/helpers/cursoreHover';
 
 function Card({url, title, paragraph, children, a}) {
 
@@ -11,7 +9,6 @@ function Card({url, title, paragraph, children, a}) {
     return (
         <article className={styles.card}>
             <div className={styles.icon_bg}>
-                {/* <img src={url} alt="Icon" className={styles.icon} /> */}
                 {children}
             </div>
             <div className={styles.title}>
@@ -20,7 +17,7 @@ function Card({url, title, paragraph, children, a}) {
             {
                 a
                 ?
-                <a target='_blank' href={paragraph}>{paragraph}</a>
+                <a onMouseEnter={cursorHoverOn} onMouseLeave={cursorHoverOff} target='_blank' rel="noreferrer" href={paragraph}>{paragraph}</a>
                 :
                 <h3>
                     {paragraph}

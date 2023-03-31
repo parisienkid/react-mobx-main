@@ -55,6 +55,9 @@ a {
     &:hover {
         color: var(--color-primary); 
         cursor: none;
+        div {
+            transform: scaleZ(10);
+        }
     }
 }
 

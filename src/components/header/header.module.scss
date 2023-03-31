@@ -49,11 +49,12 @@
     a {
         display: inline-block;
         font-size: 1.1rem;
-        margin-right: 30px;
+        margin-right: 10px;
         color: var(--color-primary);
         text-decoration: none;
         opacity: .7;
         transition: .1s;
+        padding: 10px;
         &:hover {
             opacity: 1;
         }

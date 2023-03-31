@@ -5,6 +5,7 @@ import styles from './header.module.scss';
 
 import { NavLink } from 'react-router-dom';
 import Container from '../container/Container';
+import { cursorHoverOff, cursorHoverOn } from '../../core/helpers/cursoreHover';
 
 
 function Header() {
@@ -47,9 +48,9 @@ function Header() {
                         <div className={styles.secondary}></div>
                     </div>
                     <nav className={styles.nav}>
-                        <NavLink to='/'>about</NavLink>
-                        <NavLink to='/work'>work</NavLink>
-                        <NavLink to='/contact'>contact</NavLink>
+                        <NavLink onMouseEnter={cursorHoverOn} onMouseLeave={cursorHoverOff} to='/'>about</NavLink>
+                        <NavLink onMouseEnter={cursorHoverOn} onMouseLeave={cursorHoverOff} to='/work'>work</NavLink>
+                        <NavLink onMouseEnter={cursorHoverOn} onMouseLeave={cursorHoverOff} to='/contact'>contact</NavLink>
                     </nav>
                 </div>
             </Container>
